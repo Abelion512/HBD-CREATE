@@ -48,14 +48,23 @@
 
     .archieve {
       margin-top: 30px;
+      display: flex;
+      flex-wrap: wrap;
+      justify-content: center;
+      gap: 15px;
     }
 
     .archieve img {
-      width: 100px;
-      height: 100px;
+      max-width: 120px;
+      max-height: 150px;
+      border-radius: 10px;
       object-fit: cover;
-      border-radius: 50%;
-      margin: 10px;
+      cursor: pointer;
+      transition: transform 0.3s;
+    }
+
+    .archieve img:hover {
+      transform: scale(1.05);
     }
 
     #welcome-popup {
@@ -95,6 +104,31 @@
       color: white;
       cursor: pointer;
     }
+
+    /* Fullscreen Modal */
+    .modal {
+      display: none;
+      position: fixed;
+      z-index: 99999;
+      left: 0;
+      top: 0;
+      width: 100vw;
+      height: 100vh;
+      overflow: auto;
+      background-color: rgba(0, 0, 0, 0.8);
+    }
+
+    .modal img {
+      margin: 5% auto;
+      display: block;
+      max-width: 90%;
+      max-height: 80vh;
+      border-radius: 10px;
+    }
+
+    .modal:active {
+      display: none;
+    }
   </style>
 </head>
 
@@ -114,14 +148,20 @@
   <img class="birthday-image" src="img/image.png" alt="Birthday Person">
   <h1 id="birthday-heading">Happy Birthday, Archie! 🎉</h1>
   <p id="birthday-message">
-    Semoga hari ulang tahunmu penuh dengan kebahagiaan, cinta, dan kejutan manis. Semoga keterima di ptn impian 🎂💖 You deserve the best in this world! 🎂💖 </p>
+    Semoga hari ulang tahunmu penuh dengan kebahagiaan, cinta, dan kejutan manis. Semoga keterima di ptn impian 🎂💖 You deserve the best in this world! 🎂💖
+  </p>
 
   <div class="archieve">
     <h2>Little Memories</h2>
-    <img src="img/image.png" alt="Archive 1">
-    <img src="img/image1.png" alt="Archive 2">
-    <img src="img/image2.png" alt="Archive 3">
-    <img src="img/image3.png" alt="Archive 4">
+    <img src="img/image.png" alt="Archive 1" onclick="openModal(this)">
+    <img src="img/image1.png" alt="Archive 2" onclick="openModal(this)">
+    <img src="img/image2.png" alt="Archive 3" onclick="openModal(this)">
+    <img src="img/image3.png" alt="Archive 4" onclick="openModal(this)">
+  </div>
+
+  <!-- Modal -->
+  <div id="imgModal" class="modal" onclick="closeModal()">
+    <img id="modalImg" src="" alt="Full View">
   </div>
 
   <script>
@@ -131,6 +171,17 @@
         document.getElementById('welcome-popup').style.display = 'none';
         document.getElementById('birthday-heading').innerText = `Happy Birthday, ${name}! 🎉`;
       }
+    }
+
+    function openModal(img) {
+      const modal = document.getElementById('imgModal');
+      const modalImg = document.getElementById('modalImg');
+      modal.style.display = 'block';
+      modalImg.src = img.src;
+    }
+
+    function closeModal() {
+      document.getElementById('imgModal').style.display = 'none';
     }
   </script>
 </body>
