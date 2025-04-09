@@ -58,6 +58,7 @@
       flex-wrap: wrap;
       justify-content: center;
       gap: 15px;
+      padding-bottom: 40px;
     }
 
     .archieve img {
@@ -111,7 +112,6 @@
       cursor: pointer;
     }
 
-    /* Fullscreen Modal */
     .modal {
       display: none;
       position: fixed;
@@ -130,10 +130,6 @@
       max-width: 90%;
       max-height: 80vh;
       border-radius: 10px;
-    }
-
-    .modal:active {
-      display: none;
     }
   </style>
 </head>
@@ -158,14 +154,19 @@
   </p>
 
   <h2 class="archive-title">Little Memories</h2>
+
   <div class="archieve">
     <img src="img/image.png" alt="Archive 1" onclick="openModal(this)">
     <img src="img/image1.png" alt="Archive 2" onclick="openModal(this)">
     <img src="img/image2.png" alt="Archive 3" onclick="openModal(this)">
     <img src="img/image3.png" alt="Archive 4" onclick="openModal(this)">
+    <img src="img/image4.png" alt="Archive 5" onclick="openModal(this)">
+    <img src="img/image5.png" alt="Archive 6" onclick="openModal(this)">
+    <img src="img/image6.png" alt="Archive 7" onclick="openModal(this)">
+    <img src="img/image7.png" alt="Archive 8" onclick="openModal(this)">
+    <img src="img/image8.png" alt="Archive 9" onclick="openModal(this)">
   </div>
 
-  <!-- Modal -->
   <div id="imgModal" class="modal" onclick="closeModal()">
     <img id="modalImg" src="" alt="Full View">
   </div>
