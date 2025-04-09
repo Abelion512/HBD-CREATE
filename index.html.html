@@ -1,0 +1,115 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Happy Birthday Archie!</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      background: linear-gradient(to top right, #ffe6f0, #ccf5ff);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      min-height: 100vh;
+      text-align: center;
+    }
+    .birthday-image {
+      width: 200px;
+      border-radius: 10px;
+      margin-bottom: 20px;
+      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+    }
+    h1 {
+      color: #ff69b4;
+      font-size: 2.5rem;
+      margin-bottom: 10px;
+    }
+    p {
+      font-size: 1.2rem;
+      max-width: 600px;
+      margin: 0 auto 20px;
+      color: #333;
+    }
+    .archieve {
+      margin-top: 30px;
+    }
+    .archieve img {
+      width: 100px;
+      height: 100px;
+      object-fit: cover;
+      border-radius: 50%;
+      margin: 10px;
+    }
+    #welcome-popup {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(255, 255, 255, 0.95);
+      display: flex;
+      flex-direction: column;
+      align-items: center;
+      justify-content: center;
+      z-index: 9999;
+    }
+    #welcome-popup input {
+      padding: 10px;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      border-radius: 5px;
+      margin-top: 10px;
+    }
+    #welcome-popup button {
+      margin-top: 10px;
+      padding: 10px 20px;
+      font-size: 1rem;
+      border: none;
+      border-radius: 5px;
+      background-color: #ff69b4;
+      color: white;
+      cursor: pointer;
+    }
+  </style>
+</head>
+
+<body>
+  <div id="welcome-popup">
+    <h2>Welcome!</h2>
+    <p>Masukin nama kamu dulu yaa~</p>
+    <input type="text" id="username" placeholder="Nama kamu...">
+    <button onclick="startBirthday()">Mulai</button>
+  </div>
+
+<audio autoplay loop>
+  <source src="music/hbd.mpeg" type="audio/mpeg">
+  Your browser does not support the audio element.
+</audio>
+<img class="birthday-image" src="img/image.png" alt="Birthday Person">
+  <h1 id="birthday-heading">Happy Birthday, Archie! 🎉</h1>
+  <p id="birthday-message">Semoga hari ulang tahunmu penuh dengan kebahagiaan, cinta, dan kejutan manis. Kamu pantas dapet yang terbaik di dunia ini! 🎂💖</p>
+
+<div class="archieve">
+  <h2>Little Memories</h2>
+  <img src="img/image.png" alt="Archive 1">
+  <img src="img/image.png" alt="Archive 2">
+</div>
+
+
+  <script>
+    function startBirthday() {
+      const name = document.getElementById('username').value;
+      if (name.trim() !== '') {
+        document.getElementById('welcome-popup').style.display = 'none';
+        document.getElementById('birthday-heading').innerText = `Happy Birthday, ${name}! 🎉`;
+      }
+    }
+  </script>
+</body>
+
+</html>
