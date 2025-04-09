@@ -1,13 +1,20 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
   <title>Happy Birthday Archie!</title>
   <style>
+    @import url('https://fonts.googleapis.com/css2?family=Poppins&display=swap');
+
+    * {
+      box-sizing: border-box;
+    }
+
     body {
       margin: 0;
-      padding: 20px;
+      padding: 0;
       font-family: 'Poppins', sans-serif;
       background: linear-gradient(to top right, #ffe6f0, #ccf5ff);
       display: flex;
@@ -19,41 +26,36 @@
     }
 
     .birthday-image {
-      width: 80%;
-      max-width: 250px;
+      width: 200px;
       border-radius: 10px;
       margin-bottom: 20px;
-      box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
     }
 
     h1 {
       color: #ff69b4;
-      font-size: 2rem;
+      font-size: 2.2rem;
       margin-bottom: 10px;
     }
 
     p {
       font-size: 1rem;
-      max-width: 90%;
-      margin: 0 auto 20px;
+      max-width: 600px;
+      margin: 0 auto 10px;
       color: #333;
+      padding: 0 20px;
     }
 
     .archieve {
       margin-top: 30px;
     }
 
-    .archieve h2 {
-      font-size: 1.2rem;
-      margin-bottom: 10px;
-    }
-
     .archieve img {
-      width: 80px;
-      height: 80px;
+      width: 100px;
+      height: 100px;
       object-fit: cover;
       border-radius: 50%;
-      margin: 8px;
+      margin: 10px;
     }
 
     #welcome-popup {
@@ -68,50 +70,30 @@
       align-items: center;
       justify-content: center;
       z-index: 9999;
+      text-align: center;
       padding: 20px;
     }
 
-#welcome-popup input {
-  padding: 10px;
-  font-size: 1rem;
-  border: 1px solid #ccc;
-  border-radius: 5px;
-  margin-top: 10px;
-  width: 80%;
-  max-width: 250px;
-}
+    #welcome-popup input,
+    #welcome-popup button {
+      width: 90%;
+      max-width: 300px;
+      padding: 12px;
+      font-size: 1rem;
+      border-radius: 5px;
+      margin-top: 10px;
+      text-align: center;
+    }
 
-
+    #welcome-popup input {
+      border: 1px solid #ccc;
+    }
 
     #welcome-popup button {
-      margin-top: 10px;
-      padding: 10px 20px;
-      font-size: 1rem;
       border: none;
-      border-radius: 5px;
       background-color: #ff69b4;
       color: white;
       cursor: pointer;
-    }
-
-    audio {
-      display: none;
-    }
-
-    /* MOBILE RESPONSIVE */
-    @media (max-width: 480px) {
-      h1 {
-        font-size: 1.6rem;
-      }
-
-      p {
-        font-size: 0.95rem;
-      }
-
-      .archieve img {
-        width: 70px;
-        height: 70px;
-      }
     }
   </style>
 </head>
@@ -124,16 +106,16 @@
     <button onclick="startBirthday()">Mulai</button>
   </div>
 
-  <audio autoplay loop>
-    <source src="./music/hbd.mpeg" type="audio/mpeg" />
-    Your browser doesn't support audio playback.
+  <audio class="song" loop autoplay>
+    <source src="./music/hbd.mpeg" />
+    Your browser isn't invited for super fun audio time.
   </audio>
 
-  <img class="birthday-image" src="img/image.png" alt="Birthday Person" />
+  <img class="birthday-image" src="img/image.png" alt="Birthday Person">
   <h1 id="birthday-heading">Happy Birthday, Archie! 🎉</h1>
   <p id="birthday-message">
     Semoga hari ulang tahunmu penuh dengan kebahagiaan, cinta, dan kejutan manis. You deserve the best in this world! 🎂💖
-    I hope you be the best version and keterima di PTN impian 🎓💖
+    I hope you be the best version and keterima di ptn impian 🎂💖
   </p>
 
   <div class="archieve">
@@ -152,4 +134,5 @@
     }
   </script>
 </body>
+
 </html>
